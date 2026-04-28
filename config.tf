@@ -6,6 +6,6 @@ terraform {
   backend "s3" {
     bucket = "sivarugada-portifolio-2026"   # 👈 YOUR BUCKET NAME
     key    = "terraform/terraform.tfstate"       # 👈 path inside bucket
-    region = "up-south-1"
+    region = "ap-south-1"
   }
 }
