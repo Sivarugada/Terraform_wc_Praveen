@@ -13,7 +13,7 @@ resource "aws_launch_template" "dev-launch-config" {
 // Sends your public key to the instance
 resource "aws_key_pair" "oregon-region-key-pair" {
     key_name = "oregon-region-key-pair"
-    public_key = "${file(var.PUBLIC_KEY_PATH)}"
+    public_key = "file(var.PUBLIC_KEY_PATH)"
 }
 
 resource "aws_autoscaling_group" "dev-autoscaling-group-3" {
