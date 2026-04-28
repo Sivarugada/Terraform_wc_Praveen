@@ -12,5 +12,5 @@ variable "AMI" {
 }
 
 variable "PUBLIC_KEY_PATH" {
-    default = "/Users/sivar/Devops_projects/oregon-region-key-pair.pub"
+    default = "/Users/sivar/Devops_projects/oregon-region-key-pair"
 }
