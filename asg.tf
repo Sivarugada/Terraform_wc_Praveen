@@ -1,11 +1,11 @@
 resource "aws_launch_template" "dev-launch-config" {
   name = "PROD-launch-config"
-  vpc_security_group_ids = ["${aws_security_group.ssh-allowed.id}"]
-  user_data = filebase64("${"userdata.sh"}") // Userdata is added in the lauch config and launch added to ASG
+  vpc_security_group_ids = [aws_security_group.ssh-allowed.id]
+  user_data = filebase64("userdata.sh") // Userdata is added in the lauch config and launch added to ASG
   # Keep below arguments
-  instance_type = "t2.micro"
-  image_id = "${lookup(var.AMI, var.AWS_REGION)}"
-  key_name = "${aws_key_pair.oregon-region-key-pair.id}"
+  instance_type = "t3.micro"
+  image_id = lookup(var.AMI, var.AWS_REGION)
+  key_name = aws_key_pair.oregon-region-key-pair.id
   #associate_public_ip_address = true
 
 }
